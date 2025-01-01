@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "prompt",
+ "creation": "2024-12-21 23:53:34.956197",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "location",
+  "column_break_hjjz",
+  "agent",
+  "section_break_pxss",
+  "milk_commission",
+  "milk_commission_rate",
+  "column_break_kfbl",
+  "product_commission",
+  "product_commission_rate"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "milk_commission",
+   "fieldtype": "Check",
+   "label": "Milk Commission"
+  },
+  {
+   "depends_on": "eval: doc.milk_commission",
+   "fieldname": "milk_commission_rate",
+   "fieldtype": "Float",
+   "label": "Milk Commission Rate"
+  },
+  {
+   "fieldname": "column_break_kfbl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "product_commission",
+   "fieldtype": "Check",
+   "label": "Product Commission"
+  },
+  {
+   "depends_on": "eval: doc.product_commission",
+   "fieldname": "product_commission_rate",
+   "fieldtype": "Float",
+   "label": "Product Commission Rate"
+  },
+  {
+   "fieldname": "section_break_pxss",
+   "fieldtype": "Section Break",
+   "label": "Commission"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "agent",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Agent",
+   "options": "Hirakani Member",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hjjz",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Warehouse",
+   "link_fieldname": "collection_center"
+  }
+ ],
+ "modified": "2024-12-22 01:01:55.049107",
+ "modified_by": "Administrator",
+ "module": "Hirakani",
+ "name": "Collection Center",
+ "naming_rule": "Set by user",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

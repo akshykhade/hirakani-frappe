@@ -1,0 +1,116 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SE-{type}-{MM}-{YY}-{##}",
+ "creation": "2024-12-20 01:47:27.769982",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "amended_from",
+  "type",
+  "source_warehouse",
+  "dest_warehouse",
+  "section_break_mppg",
+  "items",
+  "section_break_zqhe",
+  "total_quantity",
+  "column_break_nthp",
+  "total_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Add\nTransfer\nScrap",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval: doc.type === 'Transfer'",
+   "fieldname": "source_warehouse",
+   "fieldtype": "Link",
+   "label": "Source Warehouse",
+   "mandatory_depends_on": "eval: doc.type === 'Transfer'",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "dest_warehouse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Dest Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Stock Entry",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "columns": 5,
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Stock Entry Products",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_zqhe",
+   "fieldtype": "Section Break",
+   "label": "Summary"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Float",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_nthp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_quantity",
+   "fieldtype": "Float",
+   "label": "Total Quantity",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_mppg",
+   "fieldtype": "Section Break",
+   "label": "Items"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-12-20 02:24:57.059350",
+ "modified_by": "Administrator",
+ "module": "Hirakani",
+ "name": "Stock Entry",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
